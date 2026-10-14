@@ -1,0 +1,47 @@
+{
+	"name": "@saco/xlsx-plugin",
+	"version": "1.0.1",
+	"description": "拉取表格文件，并把 xlsx 读成 ExcelJS Workbook",
+	"author": "seawavew",
+	"license": "MIT",
+	"type": "module",
+	"homepage": "https://github.com/SeaWaveW/xlsx-plugin#readme",
+	"repository": {
+		"type": "git",
+		"url": "git+https://github.com/SeaWaveW/xlsx-plugin.git"
+	},
+	"bugs": {
+		"url": "https://github.com/SeaWaveW/xlsx-plugin/issues"
+	},
+	"publishConfig": {
+		"access": "public",
+		"registry": "https://registry.npmjs.org/"
+	},
+	"keywords": ["saco", "xlsx", "excel", "exceljs"],
+	"engines": {
+		"node": ">=20"
+	},
+	"main": "./dist/index.js",
+	"types": "./dist/index.d.ts",
+	"exports": {
+		".": {
+			"types": "./dist/index.d.ts",
+			"import": "./dist/index.js",
+			"default": "./dist/index.js"
+		},
+		"./package.json": "./package.json"
+	},
+	"files": ["dist"],
+	"sideEffects": false,
+	"scripts": {
+		"build": "tsc -p tsconfig.json",
+		"prepublishOnly": "pnpm build"
+	},
+	"dependencies": {
+		"exceljs": "^4.4.0"
+	},
+	"devDependencies": {
+		"@types/node": "^24.13.3",
+		"typescript": "~5.9.3"
+	}
+}
